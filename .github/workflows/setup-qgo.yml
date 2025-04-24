@@ -1,0 +1,33 @@
+# .github/workflows/setup-qgo.yml
+name: Initial Qompass Go Setup
+
+on:
+  create:
+    branches: [ main, master ]
+
+jobs:
+  setup-topics:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Configure Topics
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const repo = context.repo;
+            // Get current topics
+            const { data: repoData } = await github.rest.repos.get({
+              owner: repo.owner,
+              repo: repo.repo
+            });
+            
+            const requiredTopics = ['qompassai', 'go'];
+            const currentTopics = repoData.topics || [];
+            const newTopics = [...new Set([...currentTopics, ...requiredTopics])];
+            
+            await github.rest.repos.replaceAllTopics({
+              owner: repo.owner,
+              repo: repo.repo,
+              names: newTopics
+            });
