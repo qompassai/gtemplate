@@ -53,9 +53,8 @@
   <img src="https://img.shields.io/badge/Go_Tutorials-green?style=flat-square" alt="Go Tutorials">
 </a>
 <br>
-<a href="https://www.gnu.org/licenses/agpl-3.0"><img src="https://img.shields.io/badge/License-AGPL%20v3-blue.svg"
-    alt="License: AGPL v3"></a>
-<a href="./LICENSE-QCDA"><img src="https://img.shields.io/badge/license-Q--CDA-lightgrey.svg" alt="License: Q-CDA"></a>
+<a href="./LICENSE"><img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" alt="License: Apache 2.0"></a>
+
 </p>
 
 
@@ -450,3 +449,7 @@
         says data breach affected more than 100,000 people</a></p>
   </div>
 </details>
+
+## License
+
+This project is licensed under the [Apache License, Version 2.0](./LICENSE).
